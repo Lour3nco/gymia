@@ -1,0 +1,17 @@
+# segredos (o modelo das variáveis está em .env.example)
+.env
+
+# ambientes e caches do Python
+.venv/
+__pycache__/
+*.pyc
+*.pt
+
+# frontend
+node_modules/
+dist/
+
+# sistema/editor
+.DS_Store
+Thumbs.db
+.vscode/

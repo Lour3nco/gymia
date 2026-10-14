@@ -1,0 +1,14 @@
+fastapi==0.115.*
+uvicorn[standard]==0.32.*
+sqlalchemy==2.0.*
+psycopg2-binary==2.9.*
+pydantic[email]==2.*
+python-dotenv
+PyJWT==2.*
+bcrypt==4.*
+numpy
+torch
+tzdata
+torchvision
+opencv-python-headless
+python-multipart

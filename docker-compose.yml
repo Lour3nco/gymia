@@ -1,0 +1,25 @@
+# O banco é o Postgres do Supabase (schema "gymIA"), então não há serviço "db" aqui.
+services:
+  backend:
+    build: ./backend
+    env_file: .env
+    ports:
+      - "8000:8000"
+    # GPU (CUDA): requer NVIDIA Container Toolkit. Sem GPU NVIDIA, apague o bloco
+    # "deploy" abaixo; o PyTorch usa CPU automaticamente (RNF07).
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+  frontend:
+    build: ./frontend
+    environment:
+      VITE_API_URL: http://localhost:8000
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
